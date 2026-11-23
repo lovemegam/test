@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="handbook">
+  <title>중학교 사회 ① 서술형 수행평가 학습지 — 기본권 제한과 기본권 침해 구제</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Handbook style) */
+      --background: #ffffff;
+      --surface-container-low: #f3f2f1;
+      --surface-container: #e8e7e5;
+      --surface-container-high: #dbdad9;
+
+      /* Ink */
+      --on-surface: #0b0c0c;
+      --on-surface-variant: #505a5f;
+
+      /* Rules */
+      --outline: #0b0c0c;
+      --outline-variant: #b1b4b6;
+
+      /* Accents */
+      --primary: #162e51;
+      --on-primary: #ffffff;
+      --primary-container: #d2e2f1;
+      --on-primary-container: #0c2d4a;
+      --secondary: #4c2c92;
+      --tertiary: #1a569e;
+      --error: #d4351c;
+      --on-error: #ffffff;
+
+      /* Data series */
+      --data-1: #1a569e;
+      --data-2: #c75a0a;
+      --data-3: #28a197;
+      --data-4: #4c2c92;
+      --data-context: #b1b4b6;
+
+      /* Semantic tokens */
+      --positive: #00703c;
+      --positive-container: #e3f2eb;
+      --warning: #8a4b00;
+      --warning-container: #fdf2e3;
+      --error-container: #fceae8;
+      --focus: #ffdd00;
+
+      /* Fonts (Korean primary + Public Sans) */
+      --font-headline: 'Noto Sans KR', 'Public Sans', sans-serif;
+      --font-body: 'Noto Sans KR', 'Public Sans', sans-serif;
+      --font-label: 'Noto Sans KR', 'Public Sans', sans-serif;
+
+      /* Shape (Handbook square) */
+      --rounded: 0;
+      --rounded-lg: 0;
+      --rounded-full: 0;
+
+      /* Style effects */
+      --top-index-rule: 6px solid var(--primary);
+      --inset-rule: 5px solid var(--tertiary);
+      --inset-rule-error: 5px solid var(--error);
+      --inset-rule-positive: 5px solid var(--positive);
+      --inset-rule-warning: 5px solid var(--warning);
+      --button-ground: 0 2px 0 var(--primary);
+      --button-ground-primary: 0 2px 0 #091526;
+      --button-ground-secondary: 0 2px 0 #858686;
+      --focus-yellow: #ffdd00;
+      --focus-ring: 3px solid var(--focus-yellow);
+      --focus-bar: inset 0 0 0 2px var(--on-surface);
+      --focus-underline: 0 -2px var(--focus-yellow), 0 4px var(--on-surface);
+
+      /* Type scale (Focused Tool) */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.6;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      letter-spacing: 0;
+    }
+
+    header {
+      position: static !important;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: var(--body-size);
+      letter-spacing: 0;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      max-width: 1180px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .page-grid * {
+      min-width: 0;
+    }
+
+    /* Handbook top index bar */
+    .index-header {
+      border-top: var(--top-index-rule);
+      border-bottom: 1px solid var(--on-surface);
+      padding: var(--space-sm) 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: var(--label-size);
+      color: var(--on-surface);
+    }
+
+    .index-meta {
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    /* Page title block */
+    .doc-header {
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--outline-variant);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .doc-title {
+      margin: 0;
+      font-family: var(--font-headline);
+      font-size: var(--display-size);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--on-surface);
+    }
+
+    .doc-subtitle {
+      margin: 0;
+      max-width: 68ch;
+      color: var(--on-surface-variant);
+      font-size: var(--subhead-size);
+      line-height: 1.55;
+    }
+
+    /* Status summary row (lead with state) */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+
+    .inset-figure {
+      border-left: var(--inset-rule);
+      background-color: var(--surface-container-low);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .inset-figure-label {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface-variant);
+    }
+
+    .inset-figure-value {
+      font-size: var(--headline-size);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--on-surface);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .inset-figure-desc {
+      font-size: var(--label-size);
+      color: var(--on-surface);
+    }
+
+    /* Action toolbar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    /* Buttons (Handbook grounded slab) */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      font-weight: 600;
+      line-height: 1.2;
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border: 0;
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      box-shadow: var(--button-ground-primary);
+      cursor: pointer;
+      transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-micro) var(--ease-out);
+    }
+
+    .button:hover:not(:disabled) {
+      background-color: var(--on-primary-container);
+    }
+
+    .button:active:not(:disabled) {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+
+    .button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .button--secondary {
+      background-color: var(--surface-container-low);
+      color: var(--on-surface);
+      box-shadow: var(--button-ground-secondary);
+    }
+
+    .button--secondary:hover:not(:disabled) {
+      background-color: var(--surface-container-high);
+    }
+
+    .button--danger-armed {
+      background-color: var(--error);
+      color: var(--on-error);
+      box-shadow: var(--button-ground-secondary);
+    }
+
+    .button--danger-armed:hover:not(:disabled) {
+      background-color: var(--error);
+    }
+
+    .button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: 0;
+      box-shadow: var(--focus-bar);
+    }
+
+    .inline-status-msg {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface);
+      padding: var(--space-xs) var(--space-sm);
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+
+    .inline-status-msg--error {
+      background-color: var(--background);
+      color: var(--error);
+      border-left: var(--inset-rule-error);
+    }
+
+    /* Two-column asymmetric workspace */
+    .workspace-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1fr);
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .main-column {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    /* Section headings with Handbook square step badge */
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .section-block:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 var(--space-xs);
+      background-color: var(--primary);
+      color: var(--on-primary);
+      font-weight: 800;
+      font-size: 0.8125rem;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: var(--font-headline);
+      font-size: var(--headline-size);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--on-surface);
+    }
+
+    .section-desc {
+      margin: 0;
+      color: var(--on-surface-variant);
+      max-width: 65ch;
+    }
+
+    /* Student profile inputs */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr));
+      gap: var(--space-md);
+      align-items: end;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .field-group--error {
+      border-left: var(--inset-rule-error);
+      padding-left: var(--space-sm);
+    }
+
+    .field-label {
+      font-weight: 700;
+      color: var(--on-surface);
+      font-size: var(--body-size);
+    }
+
+    .field-hint {
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+    }
+
+    .field-error-text {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--error);
+      background-color: var(--background);
+    }
+
+    .text-input,
+    .select-input,
+    .textarea-input {
+      width: 100%;
+      background-color: var(--background);
+      color: var(--on-surface);
+      border: 2px solid var(--outline);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      min-height: 44px;
+      transition: box-shadow var(--dur-micro) var(--ease-out);
+    }
+
+    .select-input {
+      padding-right: var(--space-xl);
+    }
+
+    .textarea-input {
+      min-height: 136px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+
+    /* Inset callout */
+    .inset {
+      border-left: var(--inset-rule);
+      background-color: var(--surface-container-low);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .inset-title {
+      margin: 0;
+      font-size: var(--subhead-size);
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+
+    .inset-body {
+      margin: 0;
+      color: var(--on-surface);
+      max-width: 65ch;
+    }
+
+    /* Collapsible details (progressive disclosure for textbook quick-ref) */
+    .handbook-details {
+      border-top: 1px solid var(--outline-variant);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .handbook-details summary {
+      padding: var(--space-md) 0;
+      font-weight: 700;
+      color: var(--tertiary);
+      cursor: pointer;
+      list-style-position: inside;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .handbook-details summary:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .details-content {
+      padding-bottom: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    /* Ruled Handbook table */
+    .table-scroll {
+      overflow-x: auto;
+    }
+
+    .handbook-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--body-size);
+      text-align: left;
+    }
+
+    .handbook-table th {
+      padding: var(--space-sm) var(--space-sm);
+      border-bottom: 2px solid var(--on-surface);
+      font-weight: 700;
+      color: var(--on-surface);
+      vertical-align: bottom;
+    }
+
+    .handbook-table td {
+      padding: var(--space-sm) var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+      vertical-align: top;
+      color: var(--on-surface);
+    }
+
+    .num-col {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* Status tag (square, pale blue) */
+    .status-tag {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-sm);
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      font-size: var(--label-size);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .status-tag--positive {
+      background-color: var(--positive-container);
+      color: var(--positive);
+    }
+
+    .status-tag--warning {
+      background-color: var(--warning-container);
+      color: var(--warning);
+    }
+
+    /* Question card block */
+    .question-block {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      padding: var(--space-lg) 0;
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .question-block:last-child {
+      border-bottom: 0;
+    }
+
+    .question-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .question-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .question-title {
+      margin: 0;
+      font-size: var(--subhead-size);
+      font-weight: 800;
+      color: var(--on-surface);
+    }
+
+    .case-box {
+      border-left: var(--inset-rule);
+      background-color: var(--surface-container-low);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .case-label {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--tertiary);
+    }
+
+    .case-text {
+      margin: 0;
+      color: var(--on-surface);
+      max-width: 65ch;
+    }
+
+    .case-sublist {
+      margin: var(--space-xs) 0 0 0;
+      padding-left: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      color: var(--on-surface);
+    }
+
+    .prompt-text {
+      margin: 0;
+      font-weight: 700;
+      color: var(--on-surface);
+      max-width: 65ch;
+    }
+
+    .rubric-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+    }
+
+    .rubric-item-tag {
+      padding: var(--space-xs) var(--space-sm);
+      background-color: var(--surface-container-low);
+      border-left: 3px solid var(--outline-variant);
+      color: var(--on-surface);
+      font-weight: 500;
+    }
+
+    .rubric-item-tag--matched {
+      background-color: var(--positive-container);
+      border-left: 3px solid var(--positive);
+      color: var(--positive);
+      font-weight: 700;
+    }
+
+    .textarea-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+    }
+
+    .question-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    /* Evaluation & Feedback Area */
+    .feedback-panel {
+      border-left: var(--inset-rule);
+      background-color: var(--surface-container-low);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .feedback-panel--positive {
+      border-left: var(--inset-rule-positive);
+    }
+
+    .feedback-panel--warning {
+      border-left: var(--inset-rule-warning);
+    }
+
+    .feedback-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+      padding-bottom: var(--space-sm);
+    }
+
+    .feedback-score {
+      font-size: var(--subhead-size);
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: var(--on-surface);
+    }
+
+    .criterion-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .criterion-row {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .criterion-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .criterion-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .criterion-check-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+
+    .criterion-check-label input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .criterion-feedback {
+      margin: 0;
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      padding-left: calc(22px + var(--space-sm));
+    }
+
+    .model-answer-box {
+      background-color: var(--background);
+      border: 1px solid var(--outline-variant);
+      border-left: var(--inset-rule);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .model-answer-title {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--tertiary);
+    }
+
+    .model-answer-text {
+      margin: 0;
+      color: var(--on-surface);
+      max-width: 65ch;
+    }
+
+    /* Summary list (Handbook right-aligned values) */
+    .summary-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--space-sm);
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .summary-key {
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+
+    .summary-val {
+      font-variant-numeric: tabular-nums;
+      color: var(--on-surface);
+      text-align: right;
+    }
+
+    .side-card {
+      border-top: 3px solid var(--primary);
+      background-color: var(--surface-container-low);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .side-card-title {
+      margin: 0;
+      font-size: var(--subhead-size);
+      font-weight: 800;
+      color: var(--on-surface);
+    }
+
+    .nav-jump-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .nav-jump-btn {
+      width: 100%;
+      text-align: left;
+      background-color: var(--background);
+      color: var(--on-surface);
+      border: 1px solid var(--outline-variant);
+      padding: var(--space-sm);
+      min-height: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: var(--label-size);
+    }
+
+    .nav-jump-btn:hover {
+      background-color: var(--surface-container);
+    }
+
+    .overall-feedback-box {
+      border-left: var(--inset-rule);
+      background-color: var(--background);
+      border-top: 1px solid var(--outline-variant);
+      border-right: 1px solid var(--outline-variant);
+      border-bottom: 1px solid var(--outline-variant);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    /* Footer source note */
+    .source-footer {
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-md);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      .workspace-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-grid {
+        padding: var(--space-md);
+      }
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      .toolbar,
+      .question-actions,
+      .side-column {
+        display: none !important;
+      }
+      .workspace-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-grid">
+    <!-- Top Index Rule -->
+    <div class="index-header">
+      <span>중학교 사회 ① · 서술형 수행평가 학습지</span>
+      <span class="index-meta">단원: 인권과 기본권 — 02. 기본권 제한과 기본권 침해 시 구제</span>
+    </div>
+
+    <!-- Header -->
+    <header class="doc-header">
+      <h1 class="doc-title">기본권 제한과 기본권 침해 구제 서술형 수행평가</h1>
+      <p class="doc-subtitle">
+        헌법 제37조 제2항에 따른 기본권 제한의 요건과 한계를 이해하고, 기본권 침해 사례에 알맞은 구제 기관(법원, 헌법재판소, 국가인권위원회, 국민권익위원회)과 구제 절차를 근거를 들어 서술해 보세요.
+      </p>
+    </header>
+
+    <!-- Current State Up Front -->
+    <section aria-label="수행평가 작성 및 평가 현황">
+      <div class="status-grid">
+        <div class="inset-figure">
+          <span class="inset-figure-label">응시자 인적사항</span>
+          <span class="inset-figure-value" id="stat-student">미입력</span>
+          <span class="inset-figure-desc" id="stat-student-desc">학년·반·번호·이름을 입력하세요</span>
+        </div>
+        <div class="inset-figure">
+          <span class="inset-figure-label">답안 작성 진행률</span>
+          <span class="inset-figure-value" id="stat-progress">0 / 5 문항</span>
+          <span class="inset-figure-desc" id="stat-progress-desc">문항별 서술 답안을 작성하면 자동 저장됩니다</span>
+        </div>
+        <div class="inset-figure">
+          <span class="inset-figure-label">채점 기준 달성 점수</span>
+          <span class="inset-figure-value" id="stat-score">0 / 100점</span>
+          <span class="inset-figure-desc" id="stat-score-desc">핵심 개념 점검 및 자기평가 반영</span>
+        </div>
+        <div class="inset-figure">
+          <span class="inset-figure-label">평가 상태</span>
+          <span class="inset-figure-value" id="stat-stage">작성 대기</span>
+          <span class="inset-figure-desc" id="stat-stage-desc">작성 후 점검 버튼을 눌러 피드백을 확인하세요</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Action Toolbar (only ONE primary navy button) -->
+    <div class="toolbar">
+      <button type="button" class="button" id="btn-evaluate-all" onclick="evaluateAllQuestions()">
+        전체 채점 기준 점검 및 피드백 보기
+      </button>
+      <button type="button" class="button button--secondary" id="btn-export" onclick="exportWorksheet()">
+        학습지 결과 파일(.txt) 내보내기
+      </button>
+      <button type="button" class="button button--secondary" id="btn-reset" onclick="handleResetClick(this)">
+        작성 내용 초기화
+      </button>
+      <span id="toolbar-feedback" class="inline-status-msg hidden" role="status" aria-live="polite"></span>
+    </div>
+
+    <!-- Main Two-Column Asymmetric Workspace -->
+    <div class="workspace-layout">
+      <main class="main-column">
+        <!-- Section 01: Student Info -->
+        <section class="section-block" id="sec-profile" aria-labelledby="heading-profile">
+          <div class="section-header">
+            <span class="step-badge">01</span>
+            <h2 class="section-title" id="heading-profile">인적사항 입력란</h2>
+          </div>
+          <p class="section-desc">
+            수행평가 학습지 상단에 기록할 본인의 학년, 반, 번호, 이름을 정확히 입력하세요. 입력한 내용은 자동으로 저장됩니다.
+          </p>
+
+          <div class="profile-grid">
+            <div class="field-group" id="group-grade">
+              <label class="field-label" for="input-grade">학년</label>
+              <select id="input-grade" class="select-input" onchange="handleProfileChange()">
+                <option value="">선택</option>
+                <option value="1">1학년</option>
+                <option value="2">2학년</option>
+                <option value="3">3학년</option>
+              </select>
+              <span class="field-error-text hidden" id="err-grade">학년을 선택하세요.</span>
+            </div>
+
+            <div class="field-group" id="group-class">
+              <label class="field-label" for="input-class">반</label>
+              <input id="input-class" type="number" min="1" max="20" inputmode="numeric" class="text-input" oninput="handleProfileChange()">
+              <span class="field-hint">1~20 사이의 숫자</span>
+              <span class="field-error-text hidden" id="err-class">1~20 사이의 반을 입력하세요.</span>
+            </div>
+
+            <div class="field-group" id="group-number">
+              <label class="field-label" for="input-number">번호</label>
+              <input id="input-number" type="number" min="1" max="50" inputmode="numeric" class="text-input" oninput="handleProfileChange()">
+              <span class="field-hint">1~50 사이의 숫자</span>
+              <span class="field-error-text hidden" id="err-number">1~50 사이의 번호를 입력하세요.</span>
+            </div>
+
+            <div class="field-group" id="group-name">
+              <label class="field-label" for="input-name">이름</label>
+              <input id="input-name" type="text" maxlength="20" class="text-input" oninput="handleProfileChange()">
+              <span class="field-hint">한글 실명 입력</span>
+              <span class="field-error-text hidden" id="err-name">이름을 1자 이상 입력하세요.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 02: Core Reference Material -->
+        <section class="section-block" id="sec-reference" aria-labelledby="heading-reference">
+          <div class="section-header">
+            <span class="step-badge">02</span>
+            <h2 class="section-title" id="heading-reference">교과서 핵심 근거 자료</h2>
+          </div>
+
+          <div class="inset">
+            <h3 class="inset-title">대한민국 헌법 제37조 제2항</h3>
+            <p class="inset-body">
+              “국민의 모든 자유와 권리는 <strong>국가 안전 보장·질서 유지 또는 공공복리</strong>를 위하여 필요한 경우에 한하여 <strong>법률로써</strong> 제한할 수 있으며, 제한하는 경우에도 <strong>자유와 권리의 본질적인 내용을 침해할 수 없다.</strong>”
+            </p>
+          </div>
+
+          <details class="handbook-details">
+            <summary>기본권 침해 구제 4대 국가기관 핵심 정리 펼쳐보기</summary>
+            <div class="details-content">
+              <div class="table-scroll">
+                <table class="handbook-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">구제 기관</th>
+                      <th scope="col">침해 주체·상황</th>
+                      <th scope="col">신청 방법</th>
+                      <th scope="col">구제 방식 및 교과서 사례</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>법원</strong></td>
+                      <td>국가기관 또는 개인·단체에 의한 기본권 침해</td>
+                      <td>소 제기, 조정·화해 신청</td>
+                      <td>재판으로 문제 해결 (예: 주인이 풀어 놓은 개에게 물린 피해자에게 치료비·위자료 배상 판결)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>헌법재판소</strong></td>
+                      <td>공권력(법률 등)에 의한 기본권 침해</td>
+                      <td>헌법 소원 청구 (다른 구제 절차 거친 후 본인 청구)</td>
+                      <td>헌법상 기본권 침해 여부 판단 (예: 임신 32주 이전 태아 성별 고지 금지 의료법 사건)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>국가인권위원회</strong></td>
+                      <td>국가기관의 기본권 침해 또는 회사·단체 등의 부당한 차별</td>
+                      <td>진정 제기, 합의 조정</td>
+                      <td>조사 후 바로잡기·개선 권고 (예: 교실 내 CCTV 설치, 기숙사 주말 외출 무단 제한 사건)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>국민권익위원회</strong></td>
+                      <td>국가기관의 잘못된 법 집행 또는 행정 기관의 잘못된 처분</td>
+                      <td>고충 민원 제기, 행정 심판 제기</td>
+                      <td>조사하여 잘못된 처분 취소·구제 (예: 현장 확인 없이 사진만 보고 내린 식당 영업 정지 처분 취소)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <!-- Section 03: Essay Questions -->
+        <section class="section-block" id="sec-questions" aria-labelledby="heading-questions">
+          <div class="section-header">
+            <span class="step-badge">03</span>
+            <h2 class="section-title" id="heading-questions">서술형 수행평가 문항 (총 5문항 · 각 20점)</h2>
+          </div>
+          <p class="section-desc">
+            각 문항의 제시 자료를 읽고, 핵심 개념을 포함하여 완결된 문장으로 서술하세요. 답안을 작성한 뒤 <strong>문항 점검하기</strong>를 누르면 채점 기준 달성 여부와 피드백을 바로 확인할 수 있습니다.
+          </p>
+
+          <div id="questions-container"></div>
+        </section>
+
+        <!-- Section 04: Overall Evaluation & Teacher/Self Feedback -->
+        <section class="section-block" id="sec-feedback" aria-labelledby="heading-feedback">
+          <div class="section-header">
+            <span class="step-badge">04</span>
+            <h2 class="section-title" id="heading-feedback">종합 평가 및 학습 피드백 영역</h2>
+          </div>
+
+          <div class="table-scroll">
+            <table class="handbook-table">
+              <thead>
+                <tr>
+                  <th scope="col">문항</th>
+                  <th scope="col">평가 주제</th>
+                  <th scope="col">점검 상태</th>
+                  <th scope="col" class="num-col">점수</th>
+                </tr>
+              </thead>
+              <tbody id="summary-table-body">
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row" colspan="3">총점 (100점 만점)</th>
+                  <th class="num-col" id="summary-total-score">0점</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="overall-feedback-box" id="overall-feedback-box">
+            <span class="status-tag" id="overall-level-tag">점검 대기</span>
+            <h3 class="inset-title" id="overall-feedback-title">전체 채점 기준 점검을 실행하면 종합 피드백이 표시됩니다.</h3>
+            <p class="inset-body" id="overall-feedback-text">
+              아직 서술형 문항 점검이 완료되지 않았습니다. 1번부터 5번 문항까지 답안을 작성한 뒤 상단의 ‘전체 채점 기준 점검 및 피드백 보기’ 버튼을 눌러 성취 수준과 보완할 개념을 확인하세요.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Right Side Rail (1/3 asymmetric column) -->
+      <aside class="side-column" aria-label="문항 이동 및 채점 안내">
+        <div class="side-card">
+          <h2 class="side-card-title">문항별 진행 현황</h2>
+          <ul class="nav-jump-list" id="nav-jump-list"></ul>
+        </div>
+
+        <div class="side-card">
+          <h2 class="side-card-title">성취 수준 기준</h2>
+          <div class="summary-list">
+            <div class="summary-row">
+              <span class="summary-key">매우 우수</span>
+              <span class="summary-val">90점 ~ 100점</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-key">우수</span>
+              <span class="summary-val">75점 ~ 89점</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-key">보통</span>
+              <span class="summary-val">60점 ~ 74점</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-key">보완 필요</span>
+              <span class="summary-val">59점 이하</span>
+            </div>
+          </div>
+          <p class="field-hint">
+            ※ 키워드 자동 점검은 핵심 용어 포함 여부를 돕는 보조 기능이며, 문맥상 동의어로 서술한 항목은 채점 기준표의 체크박스로 직접 보정할 수 있습니다.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Source Attribution Footer -->
+    <footer class="source-footer">
+      <span>출제 근거: 중학교 사회 ① 「인권과 기본권 — 02. 기본권 제한과 기본권 침해 시 구제」 교과서 및 교사용 지도서(228~231쪽)</span>
+      <span>헌법 조항: 대한민국 헌법 제37조 제2항 · 탐구 사례: 감염병 자가 격리, 태아 성별 고지 금지 의료법, 교실 CCTV, 식당 영업 정지, 기숙사 주말 외출 제한</span>
+    </footer>
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    const QUESTIONS = [
+      {
+        id: `q1`,
+        num: 1,
+        maxScore: 20,
+        title: `기본권 제한의 요건과 감염병 자가 격리 사례`,
+        caseLabel: `제시 자료 · 지안이네 가족의 자가 격리 사례 (교과서 228쪽)`,
+        caseText: `지안이네 가족은 모두 감염병(코로나바이러스 감염증-19)에 걸려 자가 격리 안내를 받았다. 지안이는 아무런 증상도 없는데 친구와의 약속도 취소하고 집 밖으로 나가지 못하자 “정부가 격리하라고 강제해도 되는 걸까요?”라며 답답해하였다.`,
+        caseSublist: [],
+        prompt: `(1) 위 사례에서 지안이네 가족에게 제한된 기본권의 종류를 쓰고, (2) 정부가 감염병에 걸린 사람을 격리시키는 까닭을 헌법 제37조 제2항의 기본권 제한 요건과 연결하여 서술하시오.`,
+        minChars: 40,
+        modelAnswer: `위 사례에서 지안이네 가족에게 제한된 기본권은 ‘자유권’이다. 우리 헌법 제37조 제2항은 국가 안전 보장, 질서 유지, 공공복리를 위하여 필요한 경우에 한하여 국민의 기본권을 제한할 수 있도록 규정하고 있다. 감염병은 다른 사람에게 전염되기 쉬우므로, 개인의 자유를 제한하더라도 많은 사람의 건강과 안전을 지키기 위한 공공복리(또는 사회 질서 유지) 차원에서 감염병 확진자를 격리할 필요가 있다.`,
+        criteria: [
+          {
+            id: `q1_c1`,
+            label: `제한된 기본권이 ‘자유권’임을 명시함`,
+            points: 6,
+            keywords: [[`자유권`, `신체의 자유`, `이동의 자유`, `거주`]],
+            praise: `사례에서 제한된 기본권이 ‘자유권’임을 정확히 짚어냈습니다.`,
+            hint: `외출과 이동이 제한되는 상황은 신체의 자유·거주 이전의 자유 등이 포함된 ‘자유권’ 제한에 해당합니다.`
+          },
+          {
+            id: `q1_c2`,
+            label: `헌법상 기본권 제한 요건(공공복리, 질서 유지 등)을 제시함`,
+            points: 7,
+            keywords: [[`공공복리`, `공공 복리`, `질서 유지`, `국가 안전 보장`, `공동체`]],
+            praise: `헌법 제37조 제2항의 기본권 제한 요건(공공복리 등)을 근거로 잘 제시했습니다.`,
+            hint: `헌법 제37조 제2항의 세 가지 요건(국가 안전 보장, 질서 유지, 공공복리) 중 특히 ‘공공복리’ 용어를 포함해 서술해 보세요.`
+          },
+          {
+            id: `q1_c3`,
+            label: `감염병 전파 방지 및 다수 국민의 건강 보호라는 이유를 서술함`,
+            points: 7,
+            keywords: [[`전염`, `전파`, `감염`, `확산`], [`건강`, `안전`, `생명`, `다수`, `많은 사람`, `사회`]],
+            praise: `감염병 전파를 막아 다수 국민의 건강을 지키려는 공익적 이유를 논리적으로 설명했습니다.`,
+            hint: `왜 격리가 필요한지(감염병이 다른 사람에게 전염·확산되는 것을 막고 많은 사람의 건강을 지키기 위함)를 구체적으로 써 보세요.`
+          }
+        ]
+      },
+      {
+        id: `q2`,
+        num: 2,
+        maxScore: 20,
+        title: `기본권 제한의 한계와 헌법 규정의 취지`,
+        caseLabel: `제시 자료 · 기본권 제한의 한계 (교과서 228~229쪽)`,
+        caseText: `국가는 국가 안전 보장(중요 군사 시설 촬영 제한), 질서 유지(무단 횡단·신호 위반 단속), 공공복리(청소년 PC방 야간 이용 시간 제한)를 위해 국민의 기본권을 제한할 수 있다. 그러나 국민의 기본권을 지나치게 제한하면 인간의 존엄과 가치가 침해될 수 있어 헌법 제37조 제2항은 기본권 제한의 한계를 엄격하게 규정하고 있다.`,
+        caseSublist: [],
+        prompt: `우리 헌법 제37조 제2항이 규정하는 기본권 제한의 두 가지 한계(형식적 한계와 내용상 한계)를 각각 밝히고, 기본권 제한의 한계를 이처럼 엄격하게 정한 이유를 서술하시오.`,
+        minChars: 45,
+        modelAnswer: `기본권을 제한할 때에는 첫째, 반드시 국회에서 만든 ‘법률’로써만 제한할 수 있으며, 둘째, 기본권을 제한하는 경우에도 ‘자유와 권리의 본질적인 내용’을 침해할 수 없다. 우리 헌법이 이처럼 기본권 제한의 한계를 엄격하게 정한 이유는 국가 권력의 남용을 방지하여 국민의 기본권과 인간의 존엄과 가치를 최대한 보장하기 위해서이다.`,
+        criteria: [
+          {
+            id: `q2_c1`,
+            label: `국회에서 만든 ‘법률’로써만 제한할 수 있음(형식적 한계)을 명시함`,
+            points: 7,
+            keywords: [[`법률`, `국회`]],
+            praise: `국회에서 제정한 ‘법률’로써만 제한해야 한다는 형식적 한계를 정확히 썼습니다.`,
+            hint: `임의적인 명령이나 규칙이 아니라 반드시 ‘국회에서 만든 법률’로써만 제한할 수 있다는 점을 포함하세요.`
+          },
+          {
+            id: `q2_c2`,
+            label: `‘자유와 권리의 본질적인 내용’을 침해할 수 없음(내용상 한계)을 명시함`,
+            points: 7,
+            keywords: [[`본질적`, `본질`], [`침해할 수 없`, `침해 금지`, `침해해서는`, `지나치게 제한`]],
+            praise: `제한하더라도 자유와 권리의 본질적인 내용을 침해할 수 없다는 핵심 한계를 잘 서술했습니다.`,
+            hint: `‘자유와 권리의 본질적인 내용을 침해할 수 없다’는 헌법 문구를 분명히 적어 보세요.`
+          },
+          {
+            id: `q2_c3`,
+            label: `국가 권력의 남용 방지 및 기본권 최대한 보장(인권 보호) 이유를 서술함`,
+            points: 6,
+            keywords: [[`권력`, `남용`, `국가에 의한`, `지나친`], [`보장`, `존엄`, `보호`, `최대한`]],
+            praise: `국가 권력 남용을 막고 국민의 기본권을 최대한 보장하려는 헌법 정신을 잘 설명했습니다.`,
+            hint: `한계를 엄격히 정한 까닭으로 ‘국가 권력의 남용 방지’와 ‘국민의 기본권 최대한 보장(인간의 존엄과 가치 보호)’을 서술하세요.`
+          }
+        ]
+      },
+      {
+        id: `q3`,
+        num: 3,
+        maxScore: 20,
+        title: `기본권 침해 구제 기관 비교 ① — 법원과 헌법재판소`,
+        caseLabel: `제시 사례 · 법적 분쟁과 공권력에 의한 기본권 침해 (교과서 229~230쪽)`,
+        caseText: `다음 두 상황에서 기본권을 침해당한 시민이 도움을 요청할 수 있는 국가기관과 구제 절차를 비교해 보자.`,
+        caseSublist: [
+          `[사례 가] 산책하다가 주인이 풀어 놓은 개에게 물려 크게 다친 시민이 치료비와 위자료 등을 배상받고자 한다.`,
+          `[사례 나] 임신 32주 이전에 태아의 성별을 알려 주지 못하도록 규정한 「의료법」 조항이 부모의 권리를 침해한다고 판단하였다.`
+        ],
+        prompt: `[사례 가]와 [사례 나]에서 도움을 요청해야 할 국가기관을 각각 쓰고, 두 기관이 어떤 절차(재판·조정 vs 헌법 소원)를 통해 침해된 기본권을 구제하는지 비교하여 서술하시오.`,
+        minChars: 45,
+        modelAnswer: `[사례 가]는 개인에 의해 기본권을 침해당한 경우이므로 ‘법원’에 소를 제기하여 재판(또는 조정·화해)을 통해 치료비와 위자료를 배상받아 구제받는다. [사례 나]는 공권력(법률)에 의해 기본권을 침해당한 경우이므로 ‘헌법재판소’에 헌법 소원을 청구하여 해당 법률이 헌법에 보장된 기본권을 침해하였는지 판단받음으로써 구제받는다. 단, 헌법 소원은 다른 구제 절차를 모두 거친 후 본인이 청구할 수 있다.`,
+        criteria: [
+          {
+            id: `q3_c1`,
+            label: `[사례 가]의 구제 기관 ‘법원’ 및 ‘재판’(또는 조정·화해) 절차를 명시함`,
+            points: 7,
+            keywords: [[`법원`], [`재판`, `소송`, `소 제기`, `소를 제기`, `조정`, `화해`, `배상`]],
+            praise: `[사례 가]를 ‘법원’의 재판(및 조정·화해) 절차와 정확히 연결했습니다.`,
+            hint: `개인 간 손해배상 분쟁은 ‘법원’에 소를 제기하여 ‘재판’(또는 조정·화해)으로 해결함을 명시하세요.`
+          },
+          {
+            id: `q3_c2`,
+            label: `[사례 나]의 구제 기관 ‘헌법재판소’ 및 ‘헌법 소원’ 절차를 명시함`,
+            points: 7,
+            keywords: [[`헌법재판소`, `헌법 재판소`], [`헌법 소원`, `헌법소원`]],
+            praise: `[사례 나]의 ‘헌법재판소’와 ‘헌법 소원’ 청구 절차를 정확하게 서술했습니다.`,
+            hint: `법률 등 공권력에 의한 침해는 ‘헌법재판소’에 ‘헌법 소원’을 청구하여 구제받는다는 점을 꼭 써 보세요.`
+          },
+          {
+            id: `q3_c3`,
+            label: `침해 주체·역할 차이(개인·기관 분쟁 재판 vs 공권력의 기본권 침해 여부 판단)를 비교 서술함`,
+            points: 6,
+            keywords: [[`공권력`, `법률`, `의료법`, `위헌`, `기본권 침해 여부`], [`개인`, `사례 가`, `배상`, `분쟁`, `다른 구제 절차`]],
+            praise: `두 기관이 다루는 침해 상황과 구제 방식의 차이를 균형 있게 비교했습니다.`,
+            hint: `법원은 개인·단체·국가기관 간 분쟁을 재판으로 해결하고, 헌법재판소는 공권력에 의한 기본권 침해 여부를 판단한다는 차이점을 비교해 보세요.`
+          }
+        ]
+      },
+      {
+        id: `q4`,
+        num: 4,
+        maxScore: 20,
+        title: `기본권 침해 구제 기관 비교 ② — 국가인권위원회와 국민권익위원회`,
+        caseLabel: `제시 사례 · 교실 CCTV·부당 차별과 잘못된 행정 처분 (교과서 230쪽)`,
+        caseText: `일상생활에서 국가기관의 잘못된 법 집행이나 행정 처분, 또는 단체·학교에서의 인권 침해가 발생했을 때에는 다음 기관에 도움을 요청할 수 있다.`,
+        caseSublist: [
+          `[사례 다] 교실 내에 폐회로 텔레비전(CCTV)을 설치하여 학생의 초상권과 행동·표현의 자유가 침해되거나, 회사·단체로부터 부당한 차별을 당하였다.`,
+          `[사례 라] 손님이 설익은 닭고기튀김을 판다며 사진으로 신고하자, 구청이 현장 확인도 없이 사진만 보고 식당에 영업 정지 처분을 내렸다.`
+        ],
+        prompt: `[사례 다]와 [사례 라]에서 각각 도움을 요청할 수 있는 국가기관을 쓰고, 각 기관에 제기하는 신청 방법(진정, 고충 민원·행정 심판 등)과 구제 내용을 연결하여 서술하시오.`,
+        minChars: 45,
+        modelAnswer: `[사례 다]에서는 ‘국가인권위원회’에 진정을 제기(또는 합의 조정 신청)하여 조사와 바로잡기 권고를 통해 침해된 기본권과 차별을 구제받을 수 있다. [사례 라]에서는 ‘국민권익위원회’에 고충 민원이나 행정 심판을 제기하여, 구청의 부당한 영업 정지 처분이 잘못되었음을 조사받고 처분을 취소하는 등 침해된 권리를 구제받을 수 있다.`,
+        criteria: [
+          {
+            id: `q4_c1`,
+            label: `[사례 다]를 ‘국가인권위원회’ 및 ‘진정’(또는 조정) 절차와 연결함`,
+            points: 7,
+            keywords: [[`국가인권위원회`, `국가 인권 위원회`], [`진정`, `조정`, `권고`, `조사`]],
+            praise: `[사례 다]에서 ‘국가인권위원회’에 ‘진정’을 제기해 구제받는 절차를 정확히 썼습니다.`,
+            hint: `교실 CCTV나 부당 차별 문제는 ‘국가인권위원회’에 ‘진정’을 제기하여 조사·시정(조정)받는다는 점을 적어 보세요.`
+          },
+          {
+            id: `q4_c2`,
+            label: `[사례 라]를 ‘국민권익위원회’ 및 ‘고충 민원’ 또는 ‘행정 심판’과 연결함`,
+            points: 7,
+            keywords: [[`국민권익위원회`, `국민 권익 위원회`], [`고충 민원`, `고충민원`, `행정 심판`, `행정심판`]],
+            praise: `[사례 라]에서 ‘국민권익위원회’의 ‘고충 민원’ 또는 ‘행정 심판’을 정확히 연결했습니다.`,
+            hint: `행정 기관(구청)의 잘못된 처분은 ‘국민권익위원회’에 ‘고충 민원’이나 ‘행정 심판’을 제기하여 바로잡습니다.`
+          },
+          {
+            id: `q4_c3`,
+            label: `각 기관의 구체적 구제 결과(차별·침해 시정 vs 잘못된 행정 처분 취소·구제)를 설명함`,
+            points: 6,
+            keywords: [[`영업 정지`, `처분`, `취소`, `잘못된 법 집행`, `바로잡`], [`차별`, `초상권`, `자유권`, `합의`, `시정`]],
+            praise: `각 기관이 사례에서 구체적으로 어떤 구제 역할을 하는지 명확히 설명했습니다.`,
+            hint: `부당한 영업 정지 처분의 취소(국민권익위원회)와 초상권·차별 문제 조사 및 시정(국가인권위원회) 내용을 함께 서술해 보세요.`
+          }
+        ]
+      },
+      {
+        id: `q5`,
+        num: 5,
+        maxScore: 20,
+        title: `탐구 사례 분석 및 시민의 권리 구제 자세`,
+        caseLabel: `제시 사례 · ○○ 고등학교 기숙사 주말 외출 제한 사건 (교과서 231쪽)`,
+        caseText: `○○ 고등학교 기숙사 관리 규정에 따르면 학생들은 주말을 포함한 공휴일 오전 9시부터 오후 6시까지 외출할 수 있다. 그러나 해당 학교는 학생들의 별도 동의를 받지 않은 채 주말 외출을 제한하고 특별한 사유가 있을 때만 예외적으로 허용하였다. 이에 국가인권위원회는 학생들의 기본권을 침해한 행위라고 판단하고 재발 방지 대책을 마련하도록 권고하였다.`,
+        caseSublist: [],
+        prompt: `(1) 위 사례에서 학생들이 침해받은 기본권을 쓰고, (2) 국가인권위원회의 권고가 가지는 효력과, 기본권을 침해당했을 때 시민이 갖추어야 할 바람직한 자세를 서술하시오.`,
+        minChars: 45,
+        modelAnswer: `위 사례에서 학생들이 침해받은 기본권은 ‘자유권’이다. 국가인권위원회의 권고에 대해 국가기관과 지방 자치 단체는 성실하게 이행할 책임과 의무가 있으며, 이행하지 않을 경우 그 이유를 설명해야 한다. 또한 법에 명시된 기본권이라도 당사자가 적극 요구하지 않으면 구제받기 어려우므로, 자신의 권리를 알고 정당하게 주장하며 국가기관에 도움을 요청하는 적극적인 자세와 함께 다른 사람의 기본권도 존중하는 태도를 길러야 한다.`,
+        criteria: [
+          {
+            id: `q5_c1`,
+            label: `침해받은 기본권이 ‘자유권’임을 명시함`,
+            points: 6,
+            keywords: [[`자유권`, `행동의 자유`, `외출`]],
+            praise: `동의 없는 주말 외출 제한이 ‘자유권’ 침해임을 정확히 밝혔습니다.`,
+            hint: `학생들이 규정과 달리 외출을 제한받은 것은 ‘자유권’ 침해에 해당합니다.`
+          },
+          {
+            id: `q5_c2`,
+            label: `국가인권위원회 권고의 효력(이행 책임·의무, 미이행 시 이유 설명) 또는 재발 방지 권고 내용을 서술함`,
+            points: 7,
+            keywords: [[`성실`, `이행`, `책임`, `의무`, `이유를 설명`, `재발 방지`, `개선`]],
+            praise: `국가인권위원회 권고의 효력과 개선 대책 마련의 의미를 잘 설명했습니다.`,
+            hint: `국가기관과 지자체는 인권위 권고를 성실히 이행할 책임과 의무가 있고, 따르지 않을 때는 그 이유를 설명해야 한다는 점을 적어 보세요.`
+          },
+          {
+            id: `q5_c3`,
+            label: `적극적 권리 주장·구제 요청 자세 및 타인의 기본권 존중 태도를 서술함`,
+            points: 7,
+            keywords: [[`적극`, `요구`, `주장`, `요청`], [`존중`, `다른 사람`, `타인`, `권리`]],
+            praise: `자신의 기본권을 적극적으로 요구하는 자세와 타인의 기본권을 존중하는 태도를 모두 잘 담았습니다.`,
+            hint: `침해 시 국가기관에 도움을 요청하는 ‘적극적인 자세’와 ‘다른 사람의 기본권도 존중하는 태도’를 함께 서술해 보세요.`
+          }
+        ]
+      }
+    ];
+
+    let appState = {
+      profile: {
+        grade: ``,
+        classNum: ``,
+        number: ``,
+        name: ``
+      },
+      answers: {
+        q1: ``,
+        q2: ``,
+        q3: ``,
+        q4: ``,
+        q5: ``
+      },
+      evaluated: {
+        q1: false,
+        q2: false,
+        q3: false,
+        q4: false,
+        q5: false
+      },
+      manualOverrides: {},
+      showModelAnswers: {
+        q1: false,
+        q2: false,
+        q3: false,
+        q4: false,
+        q5: false
+      },
+      evaluatedAllOnce: false
+    };
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, `&amp;`)
+        .replace(/</g, `&lt;`)
+        .replace(/>/g, `&gt;`)
+        .replace(/"/g, `&quot;`)
+        .replace(/'/g, `&#39;`);
+    }
+
+    function normalizeText(text) {
+      return String(text || ``).replace(/\s+/g, ` `).trim().toLowerCase();
+    }
+
+    function checkCriterionMatch(answerText, criterion) {
+      const normalized = normalizeText(answerText);
+      if (!normalized) return false;
+      return criterion.keywords.every(function (synonymGroup) {
+        return synonymGroup.some(function (kw) {
+          return normalized.indexOf(kw.toLowerCase()) !== -1;
+        });
+      });
+    }
+
+    function isCriterionMet(questionId, criterion, answerText) {
+      const autoHit = checkCriterionMatch(answerText, criterion);
+      if (Object.prototype.hasOwnProperty.call(appState.manualOverrides, criterion.id)) {
+        return Boolean(appState.manualOverrides[criterion.id]);
+      }
+      return autoHit;
+    }
+
+    function computeQuestionScore(question) {
+      const answer = appState.answers[question.id] || ``;
+      if (!answer.trim()) return 0;
+      let total = 0;
+      question.criteria.forEach(function (c) {
+        if (isCriterionMet(question.id, c, answer)) {
+          total += c.points;
+        }
+      });
+      return total;
+    }
+
+    function getAchievementLevel(score) {
+      if (score >= 90) return { label: `매우 우수`, tagClass: `status-tag status-tag--positive` };
+      if (score >= 75) return { label: `우수`, tagClass: `status-tag status-tag--positive` };
+      if (score >= 60) return { label: `보통`, tagClass: `status-tag status-tag--warning` };
+      return { label: `보완 필요`, tagClass: `status-tag status-tag--warning` };
+    }
+
+    async function persistState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+          await window.notebookAppApi.setAppState(appState);
+        }
+      } catch (err) {
+        // Ignore persistence errors silently in non-host environments
+      }
+    }
+
+    function showToolbarMessage(text, isError) {
+      const el = document.getElementById(`toolbar-feedback`);
+      if (!el) return;
+      el.textContent = text;
+      el.classList.remove(`hidden`, `inline-status-msg--error`);
+      if (isError) {
+        el.classList.add(`inline-status-msg--error`);
+      }
+    }
+
+    function validateProfile(showErrors) {
+      const gradeEl = document.getElementById(`input-grade`);
+      const classEl = document.getElementById(`input-class`);
+      const numEl = document.getElementById(`input-number`);
+      const nameEl = document.getElementById(`input-name`);
+
+      const gradeVal = gradeEl ? gradeEl.value.trim() : ``;
+      const classNumVal = classEl ? classEl.value.trim() : ``;
+      const numVal = numEl ? numEl.value.trim() : ``;
+      const nameVal = nameEl ? nameEl.value.trim() : ``;
+
+      const classNumInt = parseInt(classNumVal, 10);
+      const numInt = parseInt(numVal, 10);
+
+      const gradeOk = gradeVal === `1` || gradeVal === `2` || gradeVal === `3`;
+      const classOk = !isNaN(classNumInt) && classNumInt >= 1 && classNumInt <= 20;
+      const numOk = !isNaN(numInt) && numInt >= 1 && numInt <= 50;
+      const nameOk = nameVal.length >= 1;
+
+      const pairs = [
+        { ok: gradeOk, group: `group-grade`, err: `err-grade` },
+        { ok: classOk, group: `group-class`, err: `err-class` },
+        { ok: numOk, group: `group-number`, err: `err-number` },
+        { ok: nameOk, group: `group-name`, err: `err-name` }
+      ];
+
+      pairs.forEach(function (item) {
+        const g = document.getElementById(item.group);
+        const e = document.getElementById(item.err);
+        if (showErrors && !item.ok) {
+          if (g) g.classList.add(`field-group--error`);
+          if (e) e.classList.remove(`hidden`);
+        } else {
+          if (g) g.classList.remove(`field-group--error`);
+          if (e) e.classList.add(`hidden`);
+        }
+      });
+
+      return gradeOk && classOk && numOk && nameOk;
+    }
+
+    function handleProfileChange() {
+      const gradeEl = document.getElementById(`input-grade`);
+      const classEl = document.getElementById(`input-class`);
+      const numEl = document.getElementById(`input-number`);
+      const nameEl = document.getElementById(`input-name`);
+
+      appState.profile.grade = gradeEl ? gradeEl.value.trim() : ``;
+      appState.profile.classNum = classEl ? classEl.value.trim() : ``;
+      appState.profile.number = numEl ? numEl.value.trim() : ``;
+      appState.profile.name = nameEl ? nameEl.value.trim() : ``;
+
+      validateProfile(false);
+      updateDashboardStatus();
+      persistState();
+    }
+
+    function handleAnswerInput(qId, value) {
+      appState.answers[qId] = value;
+
+      // Clear manual overrides for criteria where text changed so auto-detection stays responsive unless user toggles after evaluation
+      const q = QUESTIONS.find(function (item) { return item.id === qId; });
+      if (q) {
+        const countEl = document.getElementById(`char-count-` + qId);
+        if (countEl) {
+          const len = value.trim().length;
+          countEl.textContent = `현재 ` + len + `자 (권장 ` + q.minChars + `자 이상)`;
+        }
+        updateRubricTags(q);
+        if (appState.evaluated[qId]) {
+          renderQuestionFeedback(q);
+        }
+      }
+
+      updateDashboardStatus();
+      persistState();
+    }
+
+    function updateRubricTags(q) {
+      const answer = appState.answers[q.id] || ``;
+      q.criteria.forEach(function (c, idx) {
+        const tag = document.getElementById(`rtag-` + c.id);
+        if (!tag) return;
+        const matched = isCriterionMet(q.id, c, answer);
+        tag.className = matched ? `rubric-item-tag rubric-item-tag--matched` : `rubric-item-tag`;
+        tag.textContent = (idx + 1) + `. ` + c.label + ` (` + c.points + `점)` + (matched ? ` — 반영됨` : ``);
+      });
+    }
+
+    function evaluateSingleQuestion(qId) {
+      const q = QUESTIONS.find(function (item) { return item.id === qId; });
+      if (!q) return;
+      const answer = (appState.answers[qId] || ``).trim();
+      const warnEl = document.getElementById(`q-warn-` + qId);
+
+      if (!answer) {
+        if (warnEl) {
+          warnEl.textContent = `답안을 먼저 1문장 이상 작성한 뒤 점검하기를 눌러 주세요.`;
+          warnEl.classList.remove(`hidden`);
+        }
+        return;
+      }
+
+      if (warnEl) warnEl.classList.add(`hidden`);
+      appState.evaluated[qId] = true;
+      renderQuestionFeedback(q);
+      updateDashboardStatus();
+      persistState();
+    }
+
+    function toggleModelAnswer(qId) {
+      appState.showModelAnswers[qId] = !appState.showModelAnswers[qId];
+      const box = document.getElementById(`model-box-` + qId);
+      const btn = document.getElementById(`btn-model-` + qId);
+      if (box) {
+        if (appState.showModelAnswers[qId]) {
+          box.classList.remove(`hidden`);
+        } else {
+          box.classList.add(`hidden`);
+        }
+      }
+      if (btn) {
+        btn.textContent = appState.showModelAnswers[qId] ? `교과서 예시 답안 숨기기` : `교과서 예시 답안 비교`;
+      }
+      persistState();
+    }
+
+    function toggleCriterionOverride(qId, criterionId, checked) {
+      appState.manualOverrides[criterionId] = Boolean(checked);
+      const q = QUESTIONS.find(function (item) { return item.id === qId; });
+      if (q) {
+        updateRubricTags(q);
+        renderQuestionFeedback(q);
+      }
+      updateDashboardStatus();
+      persistState();
+    }
+
+    function renderQuestionFeedback(q) {
+      const panel = document.getElementById(`feedback-panel-` + q.id);
+      if (!panel) return;
+
+      if (!appState.evaluated[q.id]) {
+        panel.classList.add(`hidden`);
+        return;
+      }
+
+      const answer = (appState.answers[q.id] || ``).trim();
+      const score = computeQuestionScore(q);
+      const lengthOk = answer.length >= q.minChars;
+
+      panel.classList.remove(`hidden`, `feedback-panel--positive`, `feedback-panel--warning`);
+      if (score >= 14) {
+        panel.classList.add(`feedback-panel--positive`);
+      } else {
+        panel.classList.add(`feedback-panel--warning`);
+      }
+
+      const criteriaHtml = q.criteria.map(function (c) {
+        const autoHit = checkCriterionMatch(answer, c);
+        const met = isCriterionMet(q.id, c, answer);
+        const fbMsg = met ? c.praise : c.hint;
+        const statusTag = autoHit
+          ? `<span class="status-tag status-tag--positive">핵심 개념 감지</span>`
+          : (met ? `<span class="status-tag status-tag--positive">학생 확인 반영</span>` : `<span class="status-tag status-tag--warning">보완 필요</span>`);
+
+        return `
+          <div class="criterion-row">
+            <div class="criterion-top">
+              <label class="criterion-check-label">
+                <input type="checkbox" ${met ? `checked` : ``} onchange="toggleCriterionOverride('${q.id}', '${c.id}', this.checked)">
+                <span>${escapeHtml(c.label)} (${c.points}점)</span>
+              </label>
+              ${statusTag}
+            </div>
+            <p class="criterion-feedback">${escapeHtml(fbMsg)}</p>
+          </div>
+        `;
+      }).join(``);
+
+      const lengthNote = lengthOk
+        ? `서술 분량이 충분합니다 (${answer.length}자).`
+        : `답안이 다소 짧습니다 (${answer.length}자). 핵심 근거를 포함해 ${q.minChars}자 이상 완성된 문장으로 보충해 보세요.`;
+
+      panel.innerHTML = `
+        <div class="feedback-header">
+          <span class="feedback-score">문항 ${q.num} 점검 결과: ${score} / ${q.maxScore}점</span>
+          <span class="status-tag ${score === q.maxScore ? `status-tag--positive` : ``}">${score === q.maxScore ? `모든 기준 충족` : `기준별 보완 확인`}</span>
+        </div>
+        <div class="criterion-list">
+          ${criteriaHtml}
+        </div>
+        <p class="field-hint">${escapeHtml(lengthNote)}</p>
+      `;
+    }
+
+    function evaluateAllQuestions() {
+      const profileValid = validateProfile(true);
+      let writtenCount = 0;
+
+      QUESTIONS.forEach(function (q) {
+        const ans = (appState.answers[q.id] || ``).trim();
+        if (ans.length > 0) {
+          writtenCount += 1;
+          appState.evaluated[q.id] = true;
+          renderQuestionFeedback(q);
+          const warnEl = document.getElementById(`q-warn-` + q.id);
+          if (warnEl) warnEl.classList.add(`hidden`);
+        }
+      });
+
+      appState.evaluatedAllOnce = true;
+      updateDashboardStatus();
+      persistState();
+
+      if (!profileValid && writtenCount === 0) {
+        showToolbarMessage(`인적사항을 입력하고 1개 이상의 서술형 답안을 작성한 뒤 점검해 주세요.`, true);
+        const profSec = document.getElementById(`sec-profile`);
+        if (profSec) profSec.scrollIntoView({ behavior: `smooth` });
+        return;
+      }
+
+      if (!profileValid) {
+        showToolbarMessage(`작성된 ${writtenCount}개 문항을 점검했습니다. 상단 인적사항의 비어 있는 칸도 마저 입력해 주세요.`, true);
+      } else if (writtenCount < QUESTIONS.length) {
+        showToolbarMessage(`작성된 ${writtenCount}개 문항 점검을 마쳤습니다. 남은 ${QUESTIONS.length - writtenCount}개 문항도 작성해 보세요.`, false);
+      } else {
+        showToolbarMessage(`인적사항 및 5개 문항 전체 점검이 완료되었습니다. 아래 종합 피드백을 확인하세요.`, false);
+      }
+
+      const fbSec = document.getElementById(`sec-feedback`);
+      if (fbSec) fbSec.scrollIntoView({ behavior: `smooth` });
+    }
+
+    function updateDashboardStatus() {
+      // 1. Student stat
+      const p = appState.profile;
+      const profileComplete = validateProfile(false);
+      const statStudent = document.getElementById(`stat-student`);
+      const statStudentDesc = document.getElementById(`stat-student-desc`);
+
+      if (statStudent && statStudentDesc) {
+        if (profileComplete) {
+          statStudent.textContent = p.name;
+          statStudentDesc.textContent = `${p.grade}학년 ${p.classNum}반 ${p.number}번`;
+        } else if (p.name || p.grade || p.classNum || p.number) {
+          statStudent.textContent = `일부 입력`;
+          statStudentDesc.textContent = `학년·반·번호·이름을 모두 채워 주세요`;
+        } else {
+          statStudent.textContent = `미입력`;
+          statStudentDesc.textContent = `학년·반·번호·이름을 입력하세요`;
+        }
+      }
+
+      // 2. Progress & score
+      let completedCount = 0;
+      let evaluatedCount = 0;
+      let totalScore = 0;
+
+      QUESTIONS.forEach(function (q) {
+        const hasText = (appState.answers[q.id] || ``).trim().length > 0;
+        if (hasText) completedCount += 1;
+        if (appState.evaluated[q.id]) {
+          evaluatedCount += 1;
+          totalScore += computeQuestionScore(q);
+        }
+      });
+
+      const statProgress = document.getElementById(`stat-progress`);
+      const statProgressDesc = document.getElementById(`stat-progress-desc`);
+      if (statProgress) statProgress.textContent = `${completedCount} / ${QUESTIONS.length} 문항`;
+      if (statProgressDesc) {
+        statProgressDesc.textContent = completedCount === QUESTIONS.length
+          ? `모든 문항의 초안 작성이 완료되었습니다`
+          : `남은 문항: ${QUESTIONS.length - completedCount}문항`;
+      }
+
+      const statScore = document.getElementById(`stat-score`);
+      const statScoreDesc = document.getElementById(`stat-score-desc`);
+      if (statScore) statScore.textContent = `${totalScore} / 100점`;
+      if (statScoreDesc) {
+        statScoreDesc.textContent = evaluatedCount > 0
+          ? `${evaluatedCount}개 문항 점검 반영 결과`
+          : `점검 실행 시 기준별 점수가 합산됩니다`;
+      }
+
+      const statStage = document.getElementById(`stat-stage`);
+      const statStageDesc = document.getElementById(`stat-stage-desc`);
+      if (statStage && statStageDesc) {
+        if (completedCount === 0) {
+          statStage.textContent = `작성 대기`;
+          statStageDesc.textContent = `1번 문항부터 서술형 답안을 작성하세요`;
+        } else if (evaluatedCount < QUESTIONS.length) {
+          statStage.textContent = `작성 및 점검 중`;
+          statStageDesc.textContent = `전체 점검 버튼으로 종합 결과를 확인하세요`;
+        } else if (profileComplete) {
+          statStage.textContent = `제출 준비 완료`;
+          statStageDesc.textContent = `결과 파일(.txt)로 내보내거나 인쇄할 수 있습니다`;
+        } else {
+          statStage.textContent = `인적사항 미완`;
+          statStageDesc.textContent = `상단 인적사항을 마저 입력해 주세요`;
+        }
+      }
+
+      // 3. Side rail navigation list
+      const navList = document.getElementById(`nav-jump-list`);
+      if (navList) {
+        navList.innerHTML = QUESTIONS.map(function (q) {
+          const hasText = (appState.answers[q.id] || ``).trim().length > 0;
+          const isEval = appState.evaluated[q.id];
+          const qScore = isEval ? computeQuestionScore(q) : 0;
+          let badge = `<span class="status-tag">미작성</span>`;
+          if (isEval) {
+            badge = `<span class="status-tag ${qScore >= 14 ? `status-tag--positive` : `status-tag--warning`}">${qScore} / ${q.maxScore}점</span>`;
+          } else if (hasText) {
+            badge = `<span class="status-tag">작성 중</span>`;
+          }
+
+          return `
+            <li>
+              <button type="button" class="nav-jump-btn" onclick="jumpToQuestion('${q.id}')">
+                <span>문항 ${q.num}. ${escapeHtml(q.title.split(` — `)[0])}</span>
+                ${badge}
+              </button>
+            </li>
+          `;
+        }).join(``);
+      }
+
+      // 4. Summary table & overall feedback
+      renderOverallSummary(completedCount, evaluatedCount, totalScore);
+    }
+
+    function renderOverallSummary(completedCount, evaluatedCount, totalScore) {
+      const tbody = document.getElementById(`summary-table-body`);
+      const totalEl = document.getElementById(`summary-total-score`);
+
+      if (tbody) {
+        tbody.innerHTML = QUESTIONS.map(function (q) {
+          const hasText = (appState.answers[q.id] || ``).trim().length > 0;
+          const isEval = appState.evaluated[q.id];
+          const qScore = isEval ? computeQuestionScore(q) : 0;
+
+          let stateLabel = `미작성`;
+          if (isEval) {
+            stateLabel = qScore === q.maxScore ? `기준 모두 충족` : `점검 완료 (보완 가능)`;
+          } else if (hasText) {
+            stateLabel = `작성 중 (점검 전)`;
+          }
+
+          return `
+            <tr>
+              <td><strong>문항 ${q.num}</strong></td>
+              <td>${escapeHtml(q.title)}</td>
+              <td>${escapeHtml(stateLabel)}</td>
+              <td class="num-col">${isEval ? `${qScore} / ${q.maxScore}점` : `- / ${q.maxScore}점`}</td>
+            </tr>
+          `;
+        }).join(``);
+      }
+
+      if (totalEl) {
+        totalEl.textContent = `${totalScore} / 100점`;
+      }
+
+      const tagEl = document.getElementById(`overall-level-tag`);
+      const titleEl = document.getElementById(`overall-feedback-title`);
+      const textEl = document.getElementById(`overall-feedback-text`);
+
+      if (!tagEl || !titleEl || !textEl) return;
+
+      if (evaluatedCount === 0) {
+        tagEl.className = `status-tag`;
+        tagEl.textContent = `점검 대기`;
+        titleEl.textContent = `전체 채점 기준 점검을 실행하면 종합 피드백이 표시됩니다.`;
+        textEl.textContent = `각 문항에 핵심 개념을 담아 서술한 뒤 ‘문항 점검하기’ 또는 상단 ‘전체 채점 기준 점검 및 피드백 보기’ 버튼을 눌러 주세요.`;
+        return;
+      }
+
+      const level = getAchievementLevel(totalScore);
+      tagEl.className = level.tagClass;
+      tagEl.textContent = `성취 수준: ${level.label} (${totalScore}점)`;
+
+      const missingTopics = [];
+      QUESTIONS.forEach(function (q) {
+        const isEval = appState.evaluated[q.id];
+        if (!isEval || computeQuestionScore(q) < q.maxScore) {
+          missingTopics.push(`문항 ${q.num}(${q.title.split(` — `)[0]})`);
+        }
+      });
+
+      if (evaluatedCount === QUESTIONS.length && totalScore >= 90) {
+        titleEl.textContent = `헌법 제37조 제2항과 4대 기본권 구제 기관의 역할을 사례에 매우 정확히 적용하였습니다.`;
+        textEl.textContent = `기본권 제한의 요건(국가 안전 보장·질서 유지·공공복리)과 한계(국회 제정 법률·본질적 내용 침해 금지), 그리고 법원·헌법재판소·국가인권위원회·국민권익위원회의 차이를 근거와 함께 훌륭하게 서술했습니다.`;
+      } else if (evaluatedCount < QUESTIONS.length) {
+        titleEl.textContent = `현재 ${evaluatedCount}개 문항이 점검되었습니다. 남은 문항을 마저 완성해 보세요.`;
+        textEl.textContent = `보완 또는 추가 작성이 필요한 영역: ${missingTopics.join(`, `)}. 교과서 228~231쪽의 핵심 개념(자유권, 공공복리, 법률, 본질적 내용, 헌법 소원, 진정, 고충 민원·행정 심판)을 확인하며 답안을 채워 보세요.`;
+      } else {
+        titleEl.textContent = `핵심 개념의 방향은 잘 잡았으나 일부 세부 근거를 보완하면 만점에 도달할 수 있습니다.`;
+        textEl.textContent = `보완이 필요한 문항: ${missingTopics.join(`, `)}. 각 문항의 채점 기준별 안내와 ‘교과서 예시 답안 비교’를 참고하여 빠진 핵심 용어와 이유를 문장으로 보충해 보세요.`;
+      }
+    }
+
+    function jumpToQuestion(qId) {
+      const el = document.getElementById(`card-` + qId);
+      if (el) el.scrollIntoView({ behavior: `smooth` });
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById(`questions-container`);
+      if (!container) return;
+
+      container.innerHTML = QUESTIONS.map(function (q) {
+        const currentAns = appState.answers[q.id] || ``;
+        const sublistHtml = q.caseSublist.length > 0
+          ? `<ul class="case-sublist">${q.caseSublist.map(function (item) { return `<li>${escapeHtml(item)}</li>`; }).join(``)}</ul>`
+          : ``;
+
+        const rubricTagsHtml = q.criteria.map(function (c, idx) {
+          return `<span class="rubric-item-tag" id="rtag-${c.id}">${idx + 1}. ${escapeHtml(c.label)} (${c.points}점)</span>`;
+        }).join(``);
+
+        const modelHiddenClass = appState.showModelAnswers[q.id] ? `` : `hidden`;
+        const modelBtnLabel = appState.showModelAnswers[q.id] ? `교과서 예시 답안 숨기기` : `교과서 예시 답안 비교`;
+
+        return `
+          <article class="question-block" id="card-${q.id}">
+            <div class="question-head">
+              <div class="question-title-wrap">
+                <span class="step-badge">문항 ${q.num}</span>
+                <h3 class="question-title">${escapeHtml(q.title)}</h3>
+              </div>
+              <span class="status-tag">배점 ${q.maxScore}점</span>
+            </div>
+
+            <div class="case-box">
+              <span class="case-label">${escapeHtml(q.caseLabel)}</span>
+              <p class="case-text">${escapeHtml(q.caseText)}</p>
+              ${sublistHtml}
+            </div>
+
+            <p class="prompt-text">${escapeHtml(q.prompt)}</p>
+
+            <div class="rubric-preview" aria-label="문항 ${q.num} 채점 기준">
+              ${rubricTagsHtml}
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="textarea-${q.id}">문항 ${q.num} 서술형 답안 작성</label>
+              <textarea
+                id="textarea-${q.id}"
+                class="textarea-input"
+                oninput="handleAnswerInput('${q.id}', this.value)"
+              >${escapeHtml(currentAns)}</textarea>
+              <div class="textarea-meta-row">
+                <span id="char-count-${q.id}">현재 ${currentAns.trim().length}자 (권장 ${q.minChars}자 이상)</span>
+                <span>작성 중인 답안은 자동 저장됩니다</span>
+              </div>
+              <span class="field-error-text hidden" id="q-warn-${q.id}"></span>
+            </div>
+
+            <div class="question-actions">
+              <button type="button" class="button button--secondary" onclick="evaluateSingleQuestion('${q.id}')">
+                이 문항 점검하기
+              </button>
+              <button type="button" class="button button--secondary" id="btn-model-${q.id}" onclick="toggleModelAnswer('${q.id}')">
+                ${modelBtnLabel}
+              </button>
+            </div>
+
+            <div class="feedback-panel hidden" id="feedback-panel-${q.id}" aria-live="polite"></div>
+
+            <div class="model-answer-box ${modelHiddenClass}" id="model-box-${q.id}">
+              <span class="model-answer-title">교과서 기반 예시 답안</span>
+              <p class="model-answer-text">${escapeHtml(q.modelAnswer)}</p>
+            </div>
+          </article>
+        `;
+      }).join(``);
+
+      QUESTIONS.forEach(function (q) {
+        updateRubricTags(q);
+        if (appState.evaluated[q.id]) {
+          renderQuestionFeedback(q);
+        }
+      });
+    }
+
+    function exportWorksheet() {
+      const profileOk = validateProfile(true);
+      const p = appState.profile;
+      const studentLine = profileOk
+        ? `${p.grade}학년 ${p.classNum}반 ${p.number}번 ${p.name}`
+        : `인적사항 미완 (${p.grade || `-`}학년 ${p.classNum || `-`}반 ${p.number || `-`}번 ${p.name || `이름 미입력`})`;
+
+      let totalScore = 0;
+      const lines = [
+        `============================================================`,
+        `중학교 사회 ① 서술형 수행평가 학습지 결과 보고서`,
+        `단원: 인권과 기본권 — 02. 기본권 제한과 기본권 침해 시 구제`,
+        `응시자: ${studentLine}`,
+        `============================================================`,
+        ``
+      ];
+
+      QUESTIONS.forEach(function (q) {
+        const ans = (appState.answers[q.id] || ``).trim();
+        const isEval = appState.evaluated[q.id];
+        const score = isEval ? computeQuestionScore(q) : 0;
+        if (isEval) totalScore += score;
+
+        lines.push(`[문항 ${q.num}] ${q.title} (배점 ${q.maxScore}점)`);
+        lines.push(`문제: ${q.prompt}`);
+        lines.push(`학생 답안: ${ans ? ans : `(미작성)`}`);
+        lines.push(`점검 결과: ${isEval ? `${score} / ${q.maxScore}점` : `미점검`}`);
+        q.criteria.forEach(function (c) {
+          const met = ans ? isCriterionMet(q.id, c, ans) : false;
+          lines.push(`  - [${met ? `충족` : `미충족`}] ${c.label} (${c.points}점)`);
+        });
+        lines.push(``);
+      });
+
+      lines.push(`------------------------------------------------------------`);
+      lines.push(`총점: ${totalScore} / 100점 (${getAchievementLevel(totalScore).label})`);
+      lines.push(`------------------------------------------------------------`);
+
+      const content = lines.join(`\n`);
+      const safeName = (p.name || `학생`).replace(/[^가-힣a-zA-Z0-9_-]/g, ``);
+      const filename = `사회1_기본권수행평가_${p.grade || `X`}학년${p.classNum || `X`}반${p.number || `X`}번_${safeName}.txt`;
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+        window.notebookAppApi.triggerFileDownload({
+          content: content,
+          contentType: `text/plain`,
+          encoding: `UTF-8`,
+          filename: filename
+        });
+        showToolbarMessage(`학습지 결과 파일(${filename})을 내보냈습니다.`, false);
+      } else {
+        const blob = new Blob([content], { type: `text/plain;charset=utf-8` });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement(`a`);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToolbarMessage(`학습지 결과 파일(${filename})을 다운로드했습니다.`, false);
+      }
+    }
+
+    function handleResetClick(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.classList.add(`button--danger-armed`);
+        btn.textContent = `한 번 더 누르면 전체 초기화`;
+        showToolbarMessage(`초기화하려면 ‘한 번 더 누르면 전체 초기화’ 버튼을 다시 클릭하세요.`, true);
+        return;
+      }
+
+      btn.dataset.armed = `false`;
+      btn.classList.remove(`button--danger-armed`);
+      btn.textContent = `작성 내용 초기화`;
+
+      appState = {
+        profile: { grade: ``, classNum: ``, number: ``, name: `` },
+        answers: { q1: ``, q2: ``, q3: ``, q4: ``, q5: `` },
+        evaluated: { q1: false, q2: false, q3: false, q4: false, q5: false },
+        manualOverrides: {},
+        showModelAnswers: { q1: false, q2: false, q3: false, q4: false, q5: false },
+        evaluatedAllOnce: false
+      };
+
+      const gradeEl = document.getElementById(`input-grade`);
+      const classEl = document.getElementById(`input-class`);
+      const numEl = document.getElementById(`input-number`);
+      const nameEl = document.getElementById(`input-name`);
+      if (gradeEl) gradeEl.value = ``;
+      if (classEl) classEl.value = ``;
+      if (numEl) numEl.value = ``;
+      if (nameEl) nameEl.value = ``;
+
+      validateProfile(false);
+      renderQuestions();
+      updateDashboardStatus();
+      persistState();
+      showToolbarMessage(`인적사항과 모든 답안이 초기화되었습니다.`, false);
+    }
+
+    function applyStateToDOM(saved) {
+      if (!saved || typeof saved !== `object`) return;
+
+      if (saved.profile && typeof saved.profile === `object`) {
+        appState.profile = {
+          grade: String(saved.profile.grade || ``),
+          classNum: String(saved.profile.classNum || ``),
+          number: String(saved.profile.number || ``),
+          name: String(saved.profile.name || ``)
+        };
+      }
+      if (saved.answers && typeof saved.answers === `object`) {
+        QUESTIONS.forEach(function (q) {
+          appState.answers[q.id] = String(saved.answers[q.id] || ``);
+        });
+      }
+      if (saved.evaluated && typeof saved.evaluated === `object`) {
+        QUESTIONS.forEach(function (q) {
+          appState.evaluated[q.id] = Boolean(saved.evaluated[q.id]);
+        });
+      }
+      if (saved.manualOverrides && typeof saved.manualOverrides === `object`) {
+        appState.manualOverrides = saved.manualOverrides;
+      }
+      if (saved.showModelAnswers && typeof saved.showModelAnswers === `object`) {
+        QUESTIONS.forEach(function (q) {
+          appState.showModelAnswers[q.id] = Boolean(saved.showModelAnswers[q.id]);
+        });
+      }
+      appState.evaluatedAllOnce = Boolean(saved.evaluatedAllOnce);
+
+      const gradeEl = document.getElementById(`input-grade`);
+      const classEl = document.getElementById(`input-class`);
+      const numEl = document.getElementById(`input-number`);
+      const nameEl = document.getElementById(`input-name`);
+      if (gradeEl) gradeEl.value = appState.profile.grade;
+      if (classEl) classEl.value = appState.profile.classNum;
+      if (numEl) numEl.value = appState.profile.number;
+      if (nameEl) nameEl.value = appState.profile.name;
+    }
+
+    async function initApp() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved) {
+            applyStateToDOM(saved);
+          }
+        }
+      } catch (err) {
+        // Proceed with empty state if host state is unavailable
+      }
+
+      renderQuestions();
+      updateDashboardStatus();
+
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+          window.notebookAppApi.notifyAppReady();
+        }
+      } catch (err) {
+        // Ignore in standalone preview
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initApp);
+  </script>
+</body>
+</html>
